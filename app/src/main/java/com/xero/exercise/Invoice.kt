@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import java.text.SimpleDateFormat
 import java.util.*
 
-data class Invoice(var invoiceNumber: Int,
+data class Invoice(var invoiceNumber: UUID = UUID.randomUUID(),
                    var invoiceDate: Date = Date(),
                    var lineItems: MutableList<InvoiceLine> = mutableListOf()) {
 
@@ -49,9 +49,23 @@ data class Invoice(var invoiceNumber: Int,
     /// remove the line items in the current invoice that are also in the sourceInvoice
     fun removeItems(sourceInvoice: Invoice) = this.lineItems.minus(sourceInvoice)
 
+    override fun equals(other: Any?): Boolean {
+        if (other == null || other !is Invoice) {
+            return false
+        }
+        return other.invoiceNumber == invoiceNumber
+    }
+
     /// Outputs string containing the following (replace [] with actual values):
     /// Invoice Number: [InvoiceNumber], InvoiceDate: [DD/MM/YYYY], LineItemCount: [Number of items in LineItems]
     @SuppressLint("SimpleDateFormat")
     override fun toString(): String
-            = "${this.invoiceNumber}, ${SimpleDateFormat("DD/MM/YYYY").format(this.invoiceDate)}, LineItemCount: ${this.lineItems.size}"
+            = "${this.invoiceNumber}, ${SimpleDateFormat("dd/MM/YYYY").format(this.invoiceDate)}, LineItemCount: ${this.lineItems.size}"
+
+    override fun hashCode(): Int {
+        var result = invoiceNumber.hashCode()
+        result = 31 * result + invoiceDate.hashCode()
+        result = 31 * result + lineItems.hashCode()
+        return result
+    }
 }
