@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="11c4c446-b18d-4149-a7bf-28107288ef66" name="Default Changelist" comment="" />
+    <list default="true" id="11c4c446-b18d-4149-a7bf-28107288ef66" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/xero/exercise/InvoiceUnitTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xero/exercise/Invoice.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xero/exercise/Invoice.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/xero/exercise/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/xero/exercise/MainViewModel.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +30,19 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1gr9Rau468DzvGGKPlcvBOZeZD0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -28,9 +50,26 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android JUnit.InvoiceUnitTest">
+    <configuration name="InvoiceUnitTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xero.exercise.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xero.exercise" />
+      <option name="MAIN_CLASS_NAME" value="com.xero.exercise.InvoiceUnitTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -89,6 +128,11 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android JUnit.InvoiceUnitTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -104,10 +148,30 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1501" y="53" key="#com.intellij.ide.util.MemberChooser" timestamp="1598863159479">
+    <state x="-2460" y="-290" width="2360" height="1240" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1598871467539">
       <screen x="-2560" y="-390" width="2560" height="1440" />
     </state>
-    <state x="-1501" y="53" key="#com.intellij.ide.util.MemberChooser/-2560.-390.2560.1440/0.0.1680.1050@-2560.-390.2560.1440" timestamp="1598863159479" />
+    <state x="-2460" y="-290" width="2360" height="1240" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-2560.-390.2560.1440/0.23.1680.1027@-2560.-390.2560.1440" timestamp="1598871467539" />
+    <state x="-1501" y="53" key="#com.intellij.ide.util.MemberChooser" timestamp="1598871414280">
+      <screen x="-2560" y="-390" width="2560" height="1440" />
+    </state>
+    <state x="-1501" y="53" key="#com.intellij.ide.util.MemberChooser/-2560.-390.2560.1440/0.0.1680.1050@-2560.-390.2560.1440" timestamp="1598871414280" />
+    <state width="2518" height="423" key="GridCell.Tab.0.bottom" timestamp="1598871508677">
+      <screen x="-2560" y="-390" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="423" key="GridCell.Tab.0.bottom/-2560.-390.2560.1440/0.0.1680.1050@-2560.-390.2560.1440" timestamp="1598871508677" />
+    <state width="2518" height="423" key="GridCell.Tab.0.center" timestamp="1598871508675">
+      <screen x="-2560" y="-390" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="423" key="GridCell.Tab.0.center/-2560.-390.2560.1440/0.0.1680.1050@-2560.-390.2560.1440" timestamp="1598871508675" />
+    <state width="2518" height="423" key="GridCell.Tab.0.left" timestamp="1598871508673">
+      <screen x="-2560" y="-390" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="423" key="GridCell.Tab.0.left/-2560.-390.2560.1440/0.0.1680.1050@-2560.-390.2560.1440" timestamp="1598871508673" />
+    <state width="2518" height="423" key="GridCell.Tab.0.right" timestamp="1598871508676">
+      <screen x="-2560" y="-390" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="423" key="GridCell.Tab.0.right/-2560.-390.2560.1440/0.0.1680.1050@-2560.-390.2560.1440" timestamp="1598871508676" />
     <state x="-1615" y="-59" width="670" height="676" key="search.everywhere.popup" timestamp="1598864841846">
       <screen x="-2560" y="-390" width="2560" height="1440" />
     </state>

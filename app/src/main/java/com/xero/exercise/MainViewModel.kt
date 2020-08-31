@@ -43,7 +43,11 @@ class MainViewModel : ViewModel() {
         orderLineItems()
         previewLineItems()
         removeExtraItems()
-        InvoiceToString()
+        invoiceToString()
+    }
+
+    private fun invoiceToString() {
+
     }
 
     private fun createInvoiceWithOneItem() {
@@ -51,7 +55,7 @@ class MainViewModel : ViewModel() {
 
         invoice.addInvoiceLine(
             InvoiceLine(
-                invoiceLineId = "1",
+                invoiceLineId = 1,
                 description = "Pizza",
                 quantity = 1,
                 cost = 9.99
