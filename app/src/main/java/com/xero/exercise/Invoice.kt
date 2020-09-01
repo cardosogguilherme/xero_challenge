@@ -3,6 +3,7 @@ package com.xero.exercise
 import android.annotation.SuppressLint
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.min
 
 data class Invoice(var invoiceNumber: UUID = UUID.randomUUID(),
                    var invoiceDate: Date = Date(),
@@ -33,7 +34,7 @@ data class Invoice(var invoiceNumber: UUID = UUID.randomUUID(),
     fun clone(): Invoice = Invoice(
         invoiceNumber = invoiceNumber,
         invoiceDate = invoiceDate,
-        lineItems = lineItems
+        lineItems = mutableListOf<InvoiceLine>().apply { addAll(lineItems) }
     )
 
     /// order the lineItems by Id
@@ -43,8 +44,9 @@ data class Invoice(var invoiceNumber: UUID = UUID.randomUUID(),
 
     /// returns the number of the line items specified in the variable `max`
     //Since we need to return 'max' items, we need to make sure it's a value > 0
+    //Also, sublist is exclusive on its end
     fun previewLineItems(max: Int): List<InvoiceLine> =
-        if (max >= 1) lineItems.subList(0, max + 1) else listOf()
+        if (max >= 1) lineItems.subList(0, min(max, lineItems.size)) else listOf()
 
     /// remove the line items in the current invoice that are also in the sourceInvoice
     fun removeItems(sourceInvoice: Invoice) = this.lineItems.minus(sourceInvoice)
