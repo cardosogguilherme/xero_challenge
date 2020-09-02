@@ -1,4 +1,4 @@
-package com.xero.exercise
+package com.xero.exercise.invoice.model
 
 import android.annotation.SuppressLint
 import java.text.SimpleDateFormat
@@ -8,6 +8,8 @@ import kotlin.math.min
 data class Invoice(var invoiceNumber: UUID = UUID.randomUUID(),
                    var invoiceDate: Date = Date(),
                    var lineItems: MutableList<InvoiceLine> = mutableListOf()) {
+
+
 
     fun addInvoiceLine(line: InvoiceLine) {
         lineItems.add(line)
@@ -31,11 +33,16 @@ data class Invoice(var invoiceNumber: UUID = UUID.randomUUID(),
 
     /// Creates a deep clone of the current invoice (all fields and properties)
     //Using copy() creates a shallow copy, which means lineItems would be "shared"
-    fun clone(): Invoice = Invoice(
-        invoiceNumber = invoiceNumber,
-        invoiceDate = invoiceDate,
-        lineItems = mutableListOf<InvoiceLine>().apply { addAll(lineItems) }
-    )
+    fun clone(): Invoice =
+        Invoice(
+            invoiceNumber = invoiceNumber,
+            invoiceDate = invoiceDate,
+            lineItems = mutableListOf<InvoiceLine>().apply {
+                addAll(
+                    lineItems
+                )
+            }
+        )
 
     /// order the lineItems by Id
     fun orderLineItems() {

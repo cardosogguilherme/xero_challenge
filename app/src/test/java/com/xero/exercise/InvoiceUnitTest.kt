@@ -1,5 +1,7 @@
 package com.xero.exercise
 
+import com.xero.exercise.invoice.model.Invoice
+import com.xero.exercise.invoice.model.InvoiceLine
 import junit.framework.TestCase.assertEquals
 import junit.framework.TestCase.assertNotSame
 import org.junit.Assert
@@ -65,7 +67,8 @@ class InvoiceUnitTest {
                 description = "",
                 quantity = 1,
                 cost = 5.0
-        ))
+            )
+        )
 
         assertEquals(5.0, firstInvoice.getTotal())
     }
@@ -80,7 +83,8 @@ class InvoiceUnitTest {
                 description = "",
                 quantity = 1,
                 cost = 5.0
-            ))
+            )
+        )
 
         assertEquals(5.0, firstInvoice.getTotal())
 
@@ -90,7 +94,8 @@ class InvoiceUnitTest {
                 description = "",
                 quantity = 3,
                 cost = 5.0
-            ))
+            )
+        )
 
         assertEquals(20.0, firstInvoice.getTotal())
 
@@ -100,7 +105,8 @@ class InvoiceUnitTest {
                 description = "",
                 quantity = 0,
                 cost = 5.0
-            ))
+            )
+        )
 
         assertEquals(20.0, firstInvoice.getTotal())
     }
@@ -115,7 +121,8 @@ class InvoiceUnitTest {
                 description = "",
                 quantity = 1,
                 cost = 5.0
-            ))
+            )
+        )
 
         assertEquals(5.0, firstInvoice.getTotal())
 
@@ -125,7 +132,8 @@ class InvoiceUnitTest {
                 description = "",
                 quantity = 3,
                 cost = 5.0
-            ))
+            )
+        )
 
         assertEquals(20.0, firstInvoice.getTotal())
 
@@ -135,7 +143,8 @@ class InvoiceUnitTest {
                 description = "",
                 quantity = 0,
                 cost = 5.0
-            ))
+            )
+        )
 
         assertEquals(20.0, firstInvoice.getTotal())
 
@@ -150,7 +159,8 @@ class InvoiceUnitTest {
         val firstInvoice = Invoice()
         val secondInvoice = Invoice()
 
-        firstInvoice.addInvoiceLine(InvoiceLine(
+        firstInvoice.addInvoiceLine(
+            InvoiceLine(
                 invoiceLineId = 1,
                 description = "",
                 quantity = 1,
@@ -158,7 +168,8 @@ class InvoiceUnitTest {
             )
         )
 
-        secondInvoice.addInvoiceLine(InvoiceLine(
+        secondInvoice.addInvoiceLine(
+            InvoiceLine(
                 invoiceLineId = 2,
                 description = "",
                 quantity = 2,
@@ -194,12 +205,14 @@ class InvoiceUnitTest {
 
         //Proving isn't a shallow copy, we would add an invoice line to only one
 
-        firstInvoice.addInvoiceLine(InvoiceLine(
-            invoiceLineId = 1,
-            description = "",
-            quantity = 1,
-            cost = 5.0
-        ))
+        firstInvoice.addInvoiceLine(
+            InvoiceLine(
+                invoiceLineId = 1,
+                description = "",
+                quantity = 1,
+                cost = 5.0
+            )
+        )
 
         assertNotSame(firstInvoice.lineItems, cloneInvoice.lineItems)
         assertNotSame(firstInvoice.lineItems.size, cloneInvoice.lineItems.size)
@@ -209,19 +222,23 @@ class InvoiceUnitTest {
     fun orderItems() {
         val firstInvoice = Invoice()
 
-        firstInvoice.addInvoiceLine(InvoiceLine(
-            invoiceLineId = 2,
-            description = "",
-            quantity = 2,
-            cost = 10.0
-        ))
+        firstInvoice.addInvoiceLine(
+            InvoiceLine(
+                invoiceLineId = 2,
+                description = "",
+                quantity = 2,
+                cost = 10.0
+            )
+        )
 
-        firstInvoice.addInvoiceLine(InvoiceLine(
-            invoiceLineId = 1,
-            description = "",
-            quantity = 1,
-            cost = 5.0
-        ))
+        firstInvoice.addInvoiceLine(
+            InvoiceLine(
+                invoiceLineId = 1,
+                description = "",
+                quantity = 1,
+                cost = 5.0
+            )
+        )
 
         firstInvoice.orderLineItems()
 
@@ -241,19 +258,23 @@ class InvoiceUnitTest {
     fun previewItemsMoreThanSize() {
         val firstInvoice = Invoice()
 
-        firstInvoice.addInvoiceLine(InvoiceLine(
-            invoiceLineId = 2,
-            description = "",
-            quantity = 2,
-            cost = 10.0
-        ))
+        firstInvoice.addInvoiceLine(
+            InvoiceLine(
+                invoiceLineId = 2,
+                description = "",
+                quantity = 2,
+                cost = 10.0
+            )
+        )
 
-        firstInvoice.addInvoiceLine(InvoiceLine(
-            invoiceLineId = 1,
-            description = "",
-            quantity = 1,
-            cost = 5.0
-        ))
+        firstInvoice.addInvoiceLine(
+            InvoiceLine(
+                invoiceLineId = 1,
+                description = "",
+                quantity = 1,
+                cost = 5.0
+            )
+        )
 
         val previewItems = firstInvoice.previewLineItems(3)
         assertEquals(2, previewItems.size)
@@ -263,26 +284,32 @@ class InvoiceUnitTest {
     fun previewItemsLessThanSizeBiggerThanZero() {
         val firstInvoice = Invoice()
 
-        firstInvoice.addInvoiceLine(InvoiceLine(
-            invoiceLineId = 1,
-            description = "",
-            quantity = 2,
-            cost = 10.0
-        ))
+        firstInvoice.addInvoiceLine(
+            InvoiceLine(
+                invoiceLineId = 1,
+                description = "",
+                quantity = 2,
+                cost = 10.0
+            )
+        )
 
-        firstInvoice.addInvoiceLine(InvoiceLine(
-            invoiceLineId = 2,
-            description = "",
-            quantity = 1,
-            cost = 5.0
-        ))
+        firstInvoice.addInvoiceLine(
+            InvoiceLine(
+                invoiceLineId = 2,
+                description = "",
+                quantity = 1,
+                cost = 5.0
+            )
+        )
 
-        firstInvoice.addInvoiceLine(InvoiceLine(
-            invoiceLineId = 3,
-            description = "",
-            quantity = 1,
-            cost = 5.0
-        ))
+        firstInvoice.addInvoiceLine(
+            InvoiceLine(
+                invoiceLineId = 3,
+                description = "",
+                quantity = 1,
+                cost = 5.0
+            )
+        )
 
         val previewItems = firstInvoice.previewLineItems(2)
         assertEquals(2, previewItems.size)
@@ -343,21 +370,23 @@ class InvoiceUnitTest {
 
     @Test
     fun invoiceLinesNotEqualDifferentType() {
-        assertNotSame(InvoiceLine(
-            invoiceLineId = 1,
-            description = "",
-            quantity = 1,
-            cost = 5.0
-        ), String())
+        assertNotSame(
+            InvoiceLine(
+                invoiceLineId = 1,
+                description = "",
+                quantity = 1,
+                cost = 5.0
+            ), String())
     }
 
     @Test
     fun invoiceLinesNotEqualNull() {
-        assertNotSame(InvoiceLine(
-            invoiceLineId = 1,
-            description = "",
-            quantity = 1,
-            cost = 5.0
-        ), null)
+        assertNotSame(
+            InvoiceLine(
+                invoiceLineId = 1,
+                description = "",
+                quantity = 1,
+                cost = 5.0
+            ), null)
     }
 }

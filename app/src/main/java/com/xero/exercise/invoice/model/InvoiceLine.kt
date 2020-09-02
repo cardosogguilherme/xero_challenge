@@ -1,4 +1,4 @@
-package com.xero.exercise
+package com.xero.exercise.invoice.model
 
 data class InvoiceLine(
     val invoiceLineId: Int,

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Xero Programming Exercise</string>
+<!--    <string name="invoice_quantity"-->
+    <plurals name="invoice_quantity_plurals">
+        <item quantity="zero">No items</item>
+        <item quantity="one">1 item</item>
+        <item quantity="other">%1$s items</item>
+    </plurals>
 </resources>

@@ -22,12 +22,14 @@
  When you have finished the solution please zip it up and email it back to the recruiter or
  developer who sent it to you
  */
-package com.xero.exercise
+package com.xero.exercise.invoice.vm
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.xero.exercise.invoice.model.Invoice
+import com.xero.exercise.invoice.model.InvoiceLine
 
 class MainViewModel : ViewModel() {
 
