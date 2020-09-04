@@ -34,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+
         binding.recyclerInvoices.layoutManager = LinearLayoutManager(this)
         binding.recyclerInvoices.adapter = InvoiceAdapter()
     }
