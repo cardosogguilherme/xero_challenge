@@ -2,7 +2,9 @@ package com.xero.exercise
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -52,11 +54,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.invoice_list_menu, menu)
+        return true
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
         R.id.action_add -> {
+            Toast.makeText(this, "Add Action", Toast.LENGTH_SHORT).show()
             true
         }
         R.id.action_delete -> {
+            Toast.makeText(this, "Delete Action", Toast.LENGTH_SHORT).show()
             true
         }
         else -> super.onOptionsItemSelected(item)
