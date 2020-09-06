@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name"> Programming Exercise</string>
-<!--    <string name="invoice_quantity"-->
+    <string name="invoices_title">Invoices List</string>
+    <string name="add_invoice_title">Add Invoice</string>
+    <string name="delete_invoice_title">Delete Invoice</string>
+    <!--    <string name="invoice_quantity"-->
     <plurals name="invoice_quantity_plurals">
         <item quantity="zero">No items</item>
         <item quantity="one">1 item</item>

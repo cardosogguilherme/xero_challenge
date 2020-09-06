@@ -2,6 +2,7 @@ package com.xero.exercise
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -49,5 +50,15 @@ class MainActivity : AppCompatActivity() {
             items.addAll(invoices)
             notifyDataSetChanged()
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        R.id.action_add -> {
+            true
+        }
+        R.id.action_delete -> {
+            true
+        }
+        else -> super.onOptionsItemSelected(item)
     }
 }
