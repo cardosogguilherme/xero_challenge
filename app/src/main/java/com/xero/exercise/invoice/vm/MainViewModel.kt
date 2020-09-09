@@ -24,17 +24,27 @@
  */
 package com.xero.exercise.invoice.vm
 
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.xero.exercise.invoice.model.Invoice
 import com.xero.exercise.invoice.model.InvoiceLine
+import data.InvoiceDatabase
+import data.InvoiceRepository
+import data.mapper.toViewInvoices
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class MainViewModel : ViewModel() {
+class MainViewModel(application: Application) : ViewModel() {
 
     private val _invoices = MutableLiveData<List<Invoice>>()
     val invoices: LiveData<List<Invoice>> = _invoices
+    private var repository: InvoiceRepository = InvoiceRepository(
+        InvoiceDatabase.getDatabase(application).invoiceDao()
+    )
 
     init {
         createInvoiceWithOneItem()
@@ -45,12 +55,8 @@ class MainViewModel : ViewModel() {
         orderLineItems()
         previewLineItems()
         removeExtraItems()
-        invoiceToString()
     }
 
-    private fun invoiceToString() {
-
-    }
 
     private fun createInvoiceWithOneItem() {
         val invoice = Invoice()
@@ -344,7 +350,18 @@ class MainViewModel : ViewModel() {
     }
 
     fun loadViewData() {
-        _invoices.value = getInvoices()
+        viewModelScope.launch(Dispatchers.IO) {
+            val invoices = repository.getAllInvoices()
+
+            if (invoices.isEmpty()) {
+                val temp = getInvoices()
+                repository.insertAll(temp)
+                _invoices.postValue(temp)
+            } else {
+                _invoices.postValue(invoices.map { it.toViewInvoices() })
+            }
+        }
+
     }
 
     internal class Companion {

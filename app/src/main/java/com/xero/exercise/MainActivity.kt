@@ -12,10 +12,12 @@ import com.xero.exercise.databinding.ActivityMainBinding
 import com.xero.exercise.invoice.model.Invoice
 import com.xero.exercise.invoice.view.InvoiceAdapter
 import com.xero.exercise.invoice.vm.MainViewModel
+import com.xero.exercise.invoice.vm.ViewModelFactory
+import data.InvoiceRepository
 
 class MainActivity : AppCompatActivity() {
 
-    private val mainViewModel: MainViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModels { ViewModelFactory(application) }
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
